@@ -1,0 +1,17 @@
+// @tailwind components;
+// @tailwind utilities;
+// @tailwind base;
+
+@import "@tailwindcss/preflight";
+@import "@tailwindcss/utilities";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #00050b;
+  font-family: var(--font-chakra-petch), sans-serif;
+}
