@@ -1,9 +1,9 @@
-// @tailwind components;
-// @tailwind utilities;
-// @tailwind base;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import "@tailwindcss/preflight";
-@import "@tailwindcss/utilities";
+// @import "@tailwindcss/preflight";
+// @import "@tailwindcss/utilities";
 
 * {
   margin: 0;
