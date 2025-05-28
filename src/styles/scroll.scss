@@ -1,0 +1,24 @@
+/* src/styles/scroll.scss */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #00050b; // fundo do trilho
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #0270ff; // cor da alça
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0056cc; // cor ao passar o mouse
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #0270ff #00050b;
+}

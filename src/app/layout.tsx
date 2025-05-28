@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Chakra_Petch, Geist_Mono } from "next/font/google";
 import "../styles/globals.scss";
+import SmoothScrollProvider from "@/components/smooth-scroll-provider";
 
 const chakraPetch = Chakra_Petch({
   variable: "--font-chakra-petch",
@@ -29,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${chakraPetch.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
   );
