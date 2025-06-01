@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Chakra_Petch, Geist_Mono } from "next/font/google";
 import "../styles/globals.scss";
 import SmoothScrollProvider from "@/components/smooth-scroll-provider";
+import { SpinningText } from "@/components/magicui/spinning-text";
+import CustomCursor from "@/components/custom-cursor";
 
 const chakraPetch = Chakra_Petch({
   variable: "--font-chakra-petch",
@@ -30,6 +32,16 @@ export default function RootLayout({
       <body
         className={`${chakraPetch.variable} ${geistMono.variable} antialiased`}
       >
+        <CustomCursor />
+
+        <SpinningText
+          data-cursor="pointer"
+          className="fixed bottom-2 right-2 z-50 cursor-pointer w-24 h-24 text-white text-xs font-light"
+          duration={30}
+          radius={5}
+        >
+          scroll top • scroll top • scroll top •
+        </SpinningText>
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
