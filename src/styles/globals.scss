@@ -12,9 +12,20 @@
   padding: 0;
   box-sizing: border-box;
   cursor: none !important;
+
+  user-select: none; /* Padrão moderno */
+  -webkit-user-select: none; /* Safari/Chrome */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge antigo */
+  // pointer-events: none; /* Impede clique e arrasto (opcional) */
 }
 
 body {
   background: #00050b;
   font-family: var(--font-chakra-petch), sans-serif;
 }
+
+// .not-smoother {
+//   transform: none !important; // ← Remove qualquer translateY que o Smoother aplicaria
+//   will-change: auto;
+// }

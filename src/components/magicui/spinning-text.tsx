@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { motion, Transition, Variants } from "motion/react";
 import React, { CSSProperties } from "react";
+import { useEffect, useState } from "react";
 
 type SpinningTextProps = {
   children: string | string[];
@@ -73,12 +74,25 @@ export function SpinningText({
     ...variants?.item,
   };
 
+  const [scrollPercent, setScrollPercent] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = (scrollTop / docHeight) * 100;
+      setScrollPercent(Math.min(100, Math.max(0, Math.round(scrolled))));
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <motion.div
-      className={cn("relative", className)}
-      style={{
-        ...style,
-      }}
+      className={cn("relative flex justify-center items-center", className)}
+      style={{ ...style }}
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -96,10 +110,10 @@ export function SpinningText({
               "--total": letters.length,
               "--radius": radius,
               transform: `
-                  translate(-50%, -50%)
-                  rotate(calc(360deg / var(--total) * var(--index)))
-                  translateY(calc(var(--radius, 5) * -1ch))
-                `,
+              translate(-50%, -50%)
+              rotate(calc(360deg / var(--total) * var(--index)))
+              translateY(calc(var(--radius, 5) * -1ch))
+            `,
               transformOrigin: "center",
             } as React.CSSProperties
           }
@@ -107,6 +121,15 @@ export function SpinningText({
           {letter}
         </motion.span>
       ))}
+
+      <motion.div
+        className="absolute  z-10 text-white text-center text-xl font-bold "
+        animate={{ rotate: reverse ? 360 : -360 }} // contrário do texto
+        transition={finalTransition}
+      >
+        {scrollPercent}%
+      </motion.div>
+
       <span className="sr-only">{children}</span>
     </motion.div>
   );

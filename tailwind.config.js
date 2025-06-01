@@ -21,7 +21,10 @@ module.exports = {
       },
       backgroundImage: {
         'room-tech': "url('/images/room_tech.png')", 
-      }
+      },
+      boxShadow: {
+        scroll: '0 0 12px rgba(2, 112, 255, 0.6)',
+      },
     },
   },
   plugins: [textShadow],

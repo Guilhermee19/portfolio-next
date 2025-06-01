@@ -42,6 +42,7 @@ export default function RootLayout({
         >
           scroll top • scroll top • scroll top •
         </SpinningText>
+
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
