@@ -23,9 +23,9 @@ export default function CustomCursor() {
     // Ampliar ao passar sobre elementos com cursor-pointer
     const handlePointerEnter = () => {
       gsap.to(cursor, {
-        scale: 1.5,
+        scale: 2.5,
         backgroundColor: "rgba(255,255,255,0.05)",
-        borderColor: "transparent",
+        borderColor: "white",
         duration: 0.3,
       });
     };

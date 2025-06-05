@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -86,13 +85,13 @@ export default function Banner() {
 
       <div className="step-4 absolute top-0 left-0 w-dvw h-dvh bg-secondary opacity-100"></div>
 
-      <Image
+      {/* <Image
         src={"/images/iamgui.png"}
         width={993}
         height={1095}
         alt="I am Gui"
         className="step-5 absolute bottom-0 left-0 z-10 w-[50vw] h-dvh object-right object-cover"
-      />
+      /> */}
 
       <div className="absolute bottom-0 w-full h-[50dvh] bg-transparent -mb-px mx-auto mt-10 overflow-hidden">
         <div
