@@ -5,7 +5,7 @@ export default function Projects() {
   const projects = PROJECTS;
 
   return (
-    <div className="bg-secondary w-full h-full">
+    <div className="w-full h-full">
       <div className="container min-h-dvh flex flex-col items-center justify-center">
         <div className="w-full flex items-end gap-2">
           <p className="text-3xl text-main font-bold">#03</p>

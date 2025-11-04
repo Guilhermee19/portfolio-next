@@ -34,14 +34,14 @@ export default function RootLayout({
       >
         <CustomCursor />
 
-        <SpinningText
+        {/* <SpinningText
           data-cursor="pointer"
           className="fixed bottom-2 right-2 z-50 cursor-pointer w-24 h-24 text-white text-xs font-light"
           duration={30}
           radius={5}
         >
           scroll top • scroll top • scroll top •
-        </SpinningText>
+        </SpinningText> */}
 
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>

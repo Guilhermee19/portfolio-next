@@ -24,7 +24,6 @@ export default function CustomCursor() {
     const handlePointerEnter = () => {
       gsap.to(cursor, {
         scale: 2.5,
-        backgroundColor: "rgba(255,255,255,0.05)",
         borderColor: "white",
         duration: 0.3,
       });
@@ -33,7 +32,6 @@ export default function CustomCursor() {
     const handlePointerLeave = () => {
       gsap.to(cursor, {
         scale: 1,
-        backgroundColor: "rgba(255,255,255,0.1)",
         borderColor: "rgb(255 255 255 / 0.1)",
         duration: 0.3,
       });
@@ -63,7 +61,7 @@ export default function CustomCursor() {
   return (
     <div
       ref={cursorRef}
-      className="fixed top-0 left-0 z-[9999] pointer-events-none w-5 h-5 bg-white/10 border border-white/10 rounded-full backdrop-blur-sm"
+      className="fixed top-0 left-0 z-[9999] pointer-events-none w-5 h-5 dark:bg-white/10 bg-black/10 border dark:border-white/10 border-black/10 rounded-full backdrop-blur-md"
     />
   );
 }

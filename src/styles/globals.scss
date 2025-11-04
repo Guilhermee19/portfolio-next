@@ -22,8 +22,8 @@
 }
 
 body {
-  background: #00050b;
   font-family: var(--font-chakra-petch), sans-serif;
+  @apply dark:bg-blue-dark bg-blue-light;
 }
 
 // .not-smoother {
