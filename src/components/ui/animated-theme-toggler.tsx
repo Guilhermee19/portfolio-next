@@ -16,12 +16,22 @@ export const AnimatedThemeToggler = ({
   duration = 400,
   ...props
 }: AnimatedThemeTogglerProps) => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true); // Inicia como dark por padrão
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const updateTheme = () => {
-      setIsDark(document.documentElement.classList.contains("dark"));
+      // Verifica o localStorage primeiro, depois o tema salvo, e por último usa dark como padrão
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = savedTheme === "dark" || (!savedTheme && true); // Default para dark
+
+      if (prefersDark) {
+        document.documentElement.classList.add("dark");
+        setIsDark(true);
+      } else {
+        document.documentElement.classList.remove("dark");
+        setIsDark(false);
+      }
     };
 
     updateTheme();

@@ -26,6 +26,12 @@ body {
   @apply dark:bg-blue-dark bg-blue-light;
 }
 
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
 // .not-smoother {
 //   transform: none !important; // ← Remove qualquer translateY que o Smoother aplicaria
 //   will-change: auto;
