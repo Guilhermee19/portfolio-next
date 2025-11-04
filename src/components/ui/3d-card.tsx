@@ -36,6 +36,7 @@ export const CardContainer = ({
   };
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+    console.log(e);
     setIsMouseEntered(true);
     if (!containerRef.current) return;
   };

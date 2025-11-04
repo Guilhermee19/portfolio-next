@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Chakra_Petch, Geist_Mono } from "next/font/google";
 import "../styles/globals.scss";
 import SmoothScrollProvider from "@/components/smooth-scroll-provider";
-import { SpinningText } from "@/components/magicui/spinning-text";
 import CustomCursor from "@/components/custom-cursor";
 
 const chakraPetch = Chakra_Petch({
