@@ -17,7 +17,7 @@ module.exports = {
       },
       colors: {
         'blue-dark': '#080c1b',
-        'blue-light': '#e1eeff',
+        'blue-light': '#D5DCE7',
         main: '#0070ff', // ✅ ok
         secondary: '#00050B',
         label: '#fff',
