@@ -3,6 +3,7 @@ import { Chakra_Petch, Geist_Mono } from "next/font/google";
 import "../styles/globals.scss";
 import SmoothScrollProvider from "@/components/smooth-scroll-provider";
 import CustomCursor from "@/components/custom-cursor";
+import ClickSpark from "@/components/ClickSpark";
 
 const chakraPetch = Chakra_Petch({
   variable: "--font-chakra-petch",
@@ -59,7 +60,15 @@ export default function RootLayout({
           scroll top • scroll top • scroll top •
         </SpinningText> */}
 
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <ClickSpark
+          sparkColor="#fff"
+          sparkSize={16}
+          sparkRadius={30}
+          sparkCount={8}
+          duration={400}
+        >
+          <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        </ClickSpark>
       </body>
     </html>
   );
