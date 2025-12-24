@@ -4,6 +4,8 @@ import "../styles/globals.scss";
 import SmoothScrollProvider from "@/components/smooth-scroll-provider";
 import CustomCursor from "@/components/custom-cursor";
 import ClickSpark from "@/components/ClickSpark";
+import { SpinningText } from "@/components/magicui/spinning-text";
+import { Particles } from "@/components/ui/particles";
 
 const chakraPetch = Chakra_Petch({
   variable: "--font-chakra-petch",
@@ -51,14 +53,14 @@ export default function RootLayout({
       >
         <CustomCursor />
 
-        {/* <SpinningText
+        <SpinningText
           data-cursor="pointer"
           className="fixed bottom-2 right-2 z-50 cursor-pointer w-24 h-24 text-white text-xs font-light"
           duration={30}
           radius={5}
         >
           scroll top • scroll top • scroll top •
-        </SpinningText> */}
+        </SpinningText>
 
         <ClickSpark
           sparkColor="#fff"
@@ -67,6 +69,8 @@ export default function RootLayout({
           sparkCount={8}
           duration={400}
         >
+          <Particles className="fixed w-full h-screen top-0 left-0 z-0" />
+
           <SmoothScrollProvider>{children}</SmoothScrollProvider>
         </ClickSpark>
       </body>
