@@ -19,11 +19,6 @@ type SpinningTextProps = {
   };
 };
 
-const BASE_TRANSITION = {
-  repeat: Infinity,
-  ease: "linear",
-};
-
 const BASE_ITEM_VARIANTS = {
   hidden: {
     opacity: 1,
@@ -35,12 +30,10 @@ const BASE_ITEM_VARIANTS = {
 
 export function SpinningText({
   children,
-  duration = 10,
   style,
   className,
   reverse = false,
   radius = 5,
-  transition,
   variants,
 }: SpinningTextProps) {
   if (typeof children !== "string" && !Array.isArray(children)) {
@@ -57,12 +50,6 @@ export function SpinningText({
 
   const letters = children.split("");
   letters.push(" ");
-
-  const finalTransition = {
-    ...BASE_TRANSITION,
-    ...transition,
-    duration: (transition as { duration?: number })?.duration ?? duration,
-  };
 
   const containerVariants = {
     visible: { rotate: reverse ? -360 : 360 },
@@ -96,7 +83,6 @@ export function SpinningText({
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      transition={finalTransition}
     >
       {letters.map((letter, index) => (
         <motion.span
@@ -125,7 +111,6 @@ export function SpinningText({
       <motion.div
         className="absolute  z-10 text-white text-center text-xl font-bold "
         animate={{ rotate: reverse ? 360 : -360 }} // contrário do texto
-        transition={finalTransition}
       >
         {scrollPercent}%
       </motion.div>
