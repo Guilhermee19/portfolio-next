@@ -12,7 +12,7 @@ export default function Home() {
         className="fixed z-40 top-4 right-4 dark:text-white"
       />
 
-      <div className="relative z-10">
+      <div className="relative z-10 px-4 md:px-8">
         <Banner />
         <AboutMe />
         <Projects />

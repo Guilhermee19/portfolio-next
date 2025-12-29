@@ -5,8 +5,8 @@
 // @import "@tailwindcss/preflight";
 // @import "@tailwindcss/utilities";
 
-@use "page.scss";
-@use "scroll.scss";
+@import "page.scss";
+@import "scroll.scss";
 
 * {
   margin: 0;
